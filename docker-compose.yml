@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "5158:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=${SQL_CONNECTION_STRING}
+      - Azure__DocumentIntelligence__Endpoint=${DOC_INTEL_ENDPOINT}
+      - Azure__DocumentIntelligence__Key=${DOC_INTEL_KEY}
+      - Azure__BlobStorage__ConnectionString=${BLOB_CONNECTION_STRING}
+      - Azure__BlobStorage__ContainerName=documents
+    depends_on:
+      - sql
+
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5158
+
+  sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=${SQL_SA_PASSWORD:-YourStrong!Password123}
+    volumes:
+      - sqldata:/var/opt/mssql
+
+volumes:
+  sqldata:

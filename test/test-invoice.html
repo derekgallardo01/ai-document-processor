@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Invoice #1042</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; color: #333; }
+  .header { display: flex; justify-content: space-between; margin-bottom: 40px; }
+  .company { font-size: 24px; font-weight: bold; color: #2563eb; }
+  .company-details { font-size: 12px; color: #666; margin-top: 4px; }
+  .invoice-title { font-size: 32px; font-weight: bold; text-align: right; color: #1a1a2e; }
+  .invoice-meta { text-align: right; font-size: 13px; color: #555; margin-top: 8px; }
+  .addresses { display: flex; justify-content: space-between; margin-bottom: 30px; }
+  .address-block { font-size: 13px; }
+  .address-block strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+  th { background: #f0f2f5; text-align: left; padding: 10px 12px; font-size: 12px; text-transform: uppercase; color: #555; border-bottom: 2px solid #ddd; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; font-size: 13px; }
+  .amount { text-align: right; }
+  .totals { margin-left: auto; width: 280px; }
+  .totals tr td { padding: 6px 12px; }
+  .totals .total-row { font-weight: bold; font-size: 16px; border-top: 2px solid #333; }
+  .footer { margin-top: 40px; font-size: 11px; color: #888; text-align: center; border-top: 1px solid #eee; padding-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="company">Contoso Ltd.</div>
+    <div class="company-details">
+      123 Business Ave, Suite 400<br>
+      Seattle, WA 98101<br>
+      Tel: (206) 555-0142<br>
+      billing@contoso.com
+    </div>
+  </div>
+  <div>
+    <div class="invoice-title">INVOICE</div>
+    <div class="invoice-meta">
+      Invoice #: <strong>INV-1042</strong><br>
+      Date: <strong>March 15, 2026</strong><br>
+      Due Date: <strong>April 14, 2026</strong><br>
+      PO Number: <strong>PO-8837</strong>
+    </div>
+  </div>
+</div>
+
+<div class="addresses">
+  <div class="address-block">
+    <strong>Bill To:</strong>
+    Northwind Traders<br>
+    Attn: Accounts Payable<br>
+    456 Commerce St<br>
+    Portland, OR 97201
+  </div>
+  <div class="address-block">
+    <strong>Ship To:</strong>
+    Northwind Traders - Warehouse<br>
+    789 Industrial Blvd<br>
+    Portland, OR 97203
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Qty</th>
+      <th>Unit Price</th>
+      <th class="amount">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cloud Hosting - Enterprise Plan (Monthly)</td>
+      <td>1</td>
+      <td>$2,400.00</td>
+      <td class="amount">$2,400.00</td>
+    </tr>
+    <tr>
+      <td>Additional Storage (500GB)</td>
+      <td>2</td>
+      <td>$75.00</td>
+      <td class="amount">$150.00</td>
+    </tr>
+    <tr>
+      <td>SSL Certificate - Wildcard (Annual)</td>
+      <td>1</td>
+      <td>$199.00</td>
+      <td class="amount">$199.00</td>
+    </tr>
+    <tr>
+      <td>Technical Support - Premium Tier</td>
+      <td>1</td>
+      <td>$350.00</td>
+      <td class="amount">$350.00</td>
+    </tr>
+    <tr>
+      <td>Data Migration Service</td>
+      <td>3</td>
+      <td>$500.00</td>
+      <td class="amount">$1,500.00</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="totals">
+  <tr><td>Subtotal:</td><td class="amount">$4,599.00</td></tr>
+  <tr><td>Tax (10.1%):</td><td class="amount">$464.50</td></tr>
+  <tr><td>Shipping:</td><td class="amount">$0.00</td></tr>
+  <tr class="total-row"><td>Total Due:</td><td class="amount">$5,063.50</td></tr>
+</table>
+
+<div class="footer">
+  Payment Terms: Net 30 &nbsp;|&nbsp; Make checks payable to Contoso Ltd. &nbsp;|&nbsp; Thank you for your business!
+</div>
+
+</body>
+</html>

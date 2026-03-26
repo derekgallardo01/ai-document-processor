@@ -1,0 +1,29 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+
+# Node
+ui/node_modules/
+ui/build/
+
+# Environment / Secrets
+.env
+.env.local
+appsettings.Development.json
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Root tools
+/node_modules/
+/package.json
+/package-lock.json
+screenshot*.js
